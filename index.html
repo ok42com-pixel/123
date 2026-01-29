@@ -2,12 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>3D展示 - 123</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script type="module" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/model-viewer/3.1.1/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; padding: 0; background-color: #f0f0f0; }
-        model-viewer { width: 100vw; height: 100vh; display: block; }
+        body { margin: 0; padding: 0; background-color: #f0f0f0; overflow: hidden; }
+        model-viewer { width: 100vw; height: 100vh; display: block; --poster-color: #f0f0f0; }
+        /* 手机端点击提示 */
+        #ar-button { background: #fff; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; padding: 10px; }
     </style>
 </head>
 <body>
@@ -18,7 +20,11 @@
         auto-rotate 
         shadow-intensity="1" 
         loading="eager" 
-        touch-action="pan-y">
+        touch-action="pan-y"
+        alt="一个3D模型">
+        <div slot="poster" style="display:flex; justify-content:center; align-items:center; height:100%;">
+            <p>正在努力加载 3D 模型...</p>
+        </div>
     </model-viewer>
 </body>
 </html>
