@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>3D展示 - 123</title>
     <script type="module" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/model-viewer/2.1.1/model-viewer.min.js"></script>
-    <style>body{margin:0;background:#f0f0f0} model-viewer{width:100vw;height:100vh}</style>
+    <style>
+        body { margin: 0; padding: 0; background-color: #f0f0f0; overflow: hidden; }
+        model-viewer { width: 100vw; height: 100vh; display: block; }
+    </style>
 </head>
 <body>
-    <model-viewer src="123.glb" ar camera-controls auto-rotate></model-viewer>
+    <model-viewer 
+        src="123.glb" 
+        ar 
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1" 
+        loading="eager" 
+        camera-orbit="auto auto auto"
+        touch-action="pan-y">
+    </model-viewer>
 </body>
 </html>
