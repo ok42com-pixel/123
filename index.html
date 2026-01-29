@@ -3,14 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D展示 - 123</title>
+    <title>3D展示 - 顶部标题</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; padding: 0; background-color: #f0f0f0; overflow: hidden; }
+        body { margin: 0; padding: 0; background-color: #f0f0f0; overflow: hidden; font-family: sans-serif; }
+        
+        /* 顶部文字区域样式 */
+        .header-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+            backdrop-filter: blur(5px);           /* 模糊效果，显得高级 */
+            text-align: center;
+            z-index: 100;                         /* 确保文字在模型上方 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-text h1 { margin: 0; font-size: 20px; color: #333; }
+        .header-text p { margin: 5px 0 0; font-size: 14px; color: #666; }
+
         model-viewer { width: 100vw; height: 100vh; display: block; }
     </style>
 </head>
 <body>
+
+    <div class="header-text">
+        <h1>未之路B58</h1>
+        <p>点击刀具模型拖动查看三维，双指拖能放大细节</p>
+    </div>
+
     <model-viewer 
         src="123.glb" 
         ar 
@@ -19,9 +43,7 @@
         shadow-intensity="1" 
         loading="eager" 
         touch-action="pan-y">
-        <div slot="poster" style="display:flex; justify-content:center; align-items:center; height:100%;">
-            <p>正在努力加载模型，请稍候...</p>
-        </div>
     </model-viewer>
+
 </body>
 </html>
